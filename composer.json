@@ -2,6 +2,7 @@
     "name": "barreirinha/helper",
     "description": "Helper para usar em minhas aplicações PHP",
     "type": "library",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Barreirinha",
