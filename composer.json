@@ -1,0 +1,14 @@
+{
+    "name": "barreirinha/helper",
+    "description": "Helper para usar em minhas aplicações PHP",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Barreirinha",
+            "email": "barreirinha@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.4",
+    },
+}
