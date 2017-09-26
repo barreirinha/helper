@@ -2,7 +2,8 @@
     "name": "barreirinha/helper",
     "description": "Helper para usar em minhas aplicações PHP",
     "type": "library",
-    "version": "1.0.1",
+    "license": "MIT",
+    "version": "1.0.2",
     "authors": [
         {
             "name": "Barreirinha",
