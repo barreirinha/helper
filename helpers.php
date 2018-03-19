@@ -42,7 +42,7 @@ function to_camel_case($str, $capitalise_first_char = false) {
     $func = function ($c){
         return strtoupper($c[1]);
     };
-    
+
     return preg_replace_callback('/_([a-z])/', $func, $str);
 }
 
