@@ -323,3 +323,33 @@ function validaCPF($cpf)
 
     return true;
 }
+
+
+//TODO Colocar Explicação
+    public static function setNullIfInt($value)
+    {
+        if ($value > 0){
+            return $value;
+        }
+        return null;
+    }
+
+    //TODO Colocar Explicação
+    public static function setNullIfBlancOrZero($value)
+    {
+        if (strlen($value) > 0 and $value != '0' and $value != 0){
+            return $value;
+        }
+        return null;
+    }
+
+    //TODO Colocar Explicação
+    public static function setIfExists(array $array_from, array $array_to, array $itens)
+    {
+        foreach ($itens as $iten) {
+            if (isset($array_from[$iten])){
+                $array_to[$iten] = Jogo::setNullIfBlancOrZero($array_from[$iten]);
+            }
+        }
+        return $array_to;
+    }
