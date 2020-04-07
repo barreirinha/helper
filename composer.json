@@ -3,7 +3,7 @@
     "description": "Helper para usar em minhas aplicações PHP",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.7",
+    "version": "2.0.1",
     "authors": [
         {
             "name": "Barreirinha",
