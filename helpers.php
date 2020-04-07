@@ -281,7 +281,7 @@ function validaCNPJ($cnpj)
         $j = ($j == 2) ? 9 : $j - 1;
     }
     $resto = $soma % 11;
-    if ($cnpj{12} != ($resto < 2 ? 0 : 11 - $resto))
+    if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
         return false;
     // Valida segundo dígito verificador
     for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
@@ -290,7 +290,7 @@ function validaCNPJ($cnpj)
         $j = ($j == 2) ? 9 : $j - 1;
     }
     $resto = $soma % 11;
-    return $cnpj{13} == ($resto < 2 ? 0 : 11 - $resto);
+    return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
 }
 
 function validaCPF($cpf)
@@ -324,6 +324,12 @@ function validaCPF($cpf)
     return true;
 }
 
+/**
+ * Coloca Null caso o valor seja em branco ('')
+ *
+ * @param string $value
+ * @return int $value
+ */
 function setNullIfInt($value)
 {
     if ($value > 0){
@@ -332,7 +338,12 @@ function setNullIfInt($value)
     return null;
 }
 
-//TODO Colocar Explicação
+/**
+ * Coloca Null caso o valor seja em branco ('') ou zero (0)
+ *
+ * @param string $value
+ * @return int $value
+ */
 function setNullIfBlancOrZero($value)
 {
     if (strlen($value) > 0 and $value != '0' and $value != 0){
@@ -341,12 +352,19 @@ function setNullIfBlancOrZero($value)
     return null;
 }
 
-//TODO Colocar Explicação
+/**
+ * Subistitui os valores Brancos ("") ou zero (0) para null
+ *
+ * @param array $array_from 
+ * @param array $array_to
+ * @param array $itens
+ * @return array $array_to
+ */
 function setIfExists(array $array_from, array $array_to, array $itens)
 {
     foreach ($itens as $iten) {
         if (isset($array_from[$iten])){
-            $array_to[$iten] = Jogo::setNullIfBlancOrZero($array_from[$iten]);
+            $array_to[$iten] = setNullIfBlancOrZero($array_from[$iten]);
         }
     }
     return $array_to;
