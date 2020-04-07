@@ -356,8 +356,8 @@ function setNullIfBlancOrZero($value)
  * Subistitui os valores Brancos ("") ou zero (0) para null
  *
  * @param array $array_from 
- * @param array $array_to
- * @param array $itens
+ * @param array $array_to 
+ * @param array $itens 
  * @return array $array_to
  */
 function setIfExists(array $array_from, array $array_to, array $itens)
